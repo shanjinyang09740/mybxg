@@ -4,8 +4,8 @@ define(['jquery','template','util','bootstrap'],function($,template,u){
 
 	//获取url参数中指定的参数值
 	// var ret=u.qs('flag');
-	var res=u.qs('abc');
-	console.log(res);
+	// var res=u.qs('abc');
+	// console.log(res);
 
 
 	$.ajax({
