@@ -14,11 +14,13 @@ require.config({
 		uploadify:'uploadify/jquery.uploadify.min',
 		region:'jquery-region/jquery.region',
 		ckeditor:'ckeditor/ckeditor',
+		nprogress:'nprogress/nprogress',
 		form:'form/jquery.form',
 		teacherList:'../js/teacher-list',
 		teacherAdd:'../js/teacher-add',	
 		index:'../js/index',
-		util:"../js/util"
+		util:"../js/util",
+		state:'../js/state'
 	},
 	shim:{
 		bootstrap : {
