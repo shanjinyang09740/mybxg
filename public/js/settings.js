@@ -1,4 +1,4 @@
-define(['jquery','template','util','datepicker','uploadify','region'],function($,template,util){
+define(['jquery','template','util','datepicker','uploadify','region','ckeditor'],function($,template,util){
 	//设置导航菜单选中
 	util.setMenu('/main/index');
 
@@ -31,6 +31,36 @@ define(['jquery','template','util','datepicker','uploadify','region'],function($
 			//省市县三级联动
 			$('#select').region({
 				url:'/public/assets/jquery-region/region.json'
+			});
+
+			//文本编辑
+			//法一：
+			// CKEDITOR.replace('editor',function(){
+			// 	config.toolbar[
+			// 		{ name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+			// 		{ name: 'editing', items: [ 'Scayt' ] },
+			// 		{ name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+			// 		{ name: 'insert', items: [ 'Image', 'Table', 'HorizontalRule', 'SpecialChar' ] },
+			// 		{ name: 'tools', items: [ 'Maximize' ] },
+			// 		{ name: 'document', items: [ 'Source' ] },
+			// 		'/',
+			// 		{ name: 'basicstyles', items: [ 'Bold', 'Italic', 'Strike', '-', 'RemoveFormat' ] },
+			// 		{ name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote' ] },
+			// 		{ name: 'styles', items: [ 'Styles', 'Format' ] },
+			// 		{ name: 'about', items: [ 'About' ] }
+					
+			// 	];
+			// });
+
+			//法二：
+			CKEDITOR.replace('editor',{
+				toolbarGroups:[
+					{ name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+					{ name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+					{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+					{ name: 'others', groups: [ 'others' ] }
+
+				]
 			});
 
 		}
