@@ -5,6 +5,7 @@ require.config({
 		cookie:'jquery-cookie/jquery.cookie',
 		common:'../js/common',
 		login:'../js/login',
+		settings:'../js/settings',
 		template:'artTemplate/template-web',
 		bootstrap:'bootstrap/js/bootstrap.min',
 		datepicker:'bootstrap-datepicker/js/bootstrap-datepicker',
@@ -12,7 +13,7 @@ require.config({
 		validate:'validate/jquery-validate.min',
 		form:'form/jquery.form',
 		teacherList:'../js/teacher-list',
-		teacherAdd:'../js/teacher-add',
+		teacherAdd:'../js/teacher-add',	
 		index:'../js/index',
 		util:"../js/util"
 	},
@@ -25,6 +26,9 @@ require.config({
 		},
 		validate : {
 			deps : ['jquery']
+		},
+		settings : {
+			deps:['jquery']
 		}
 	}
 
