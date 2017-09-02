@@ -43,7 +43,10 @@
     </script>
 
     <script type="text/template" id="settingTpl">
-        <form action="" class="form-horizontal">
+        <form id="settingForm" class="form-horizontal">
+            {{if tc_id}}
+                <input type="hidden" name="tc_id" value="{{tc_id}}">
+            {{/if}}
             <div class="form-group">
                 <label for="" class="col-xs-3 control-label">姓名</label>
                 <div class="col-xs-5">
@@ -135,7 +138,5 @@
             </div>
         </form>
     </script>
-
-    
 </body>
 </html>
