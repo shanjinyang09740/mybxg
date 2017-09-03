@@ -1,3 +1,4 @@
+//设置遮罩层
 define(['jquery'],function($){
 	$(document).ajaxStart(function(){
 		$('.overlay').show();

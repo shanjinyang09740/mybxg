@@ -14,7 +14,7 @@ define(['jquery','template','util','ckeditor','datepicker','uploadify','region',
 
 			//处理头像上传
 			$('#upfile').uploadify({
-				 width : 120,
+				width : 120,
 		        height : 120,
 		        buttonText : '',
 		        itemTemplate : '<span></span>',
@@ -23,6 +23,7 @@ define(['jquery','template','util','ckeditor','datepicker','uploadify','region',
 		        uploader : '/api/uploader/avatar',
 		        onUploadSuccess : function(f,data){
 		          var data = JSON.parse(data);
+		          console.log(data);
 		          // 修改图片的URL地址
 		          $('.preview img').attr('src',data.result.path);
 		        }
