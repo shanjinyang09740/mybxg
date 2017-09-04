@@ -1,4 +1,4 @@
-define(['jquery','template','util','validate','form'],function($,template,util){
+define(['jquery','template','util','ckeditor','validate','form'],function($,template,util,CKEDITOR){
 	//设置导航菜单选中高亮显示
 	util.setMenu('/course/add');
 
@@ -8,7 +8,7 @@ define(['jquery','template','util','validate','form'],function($,template,util){
 	//添加和编辑的标志位
 	var flag=util.qs('flag');
 
-
+	
 	//无论添加还是编辑课程都需要先查询课程信息
 	$.ajax({
 		type:'get',
@@ -30,6 +30,16 @@ define(['jquery','template','util','validate','form'],function($,template,util){
 				var html=template('basicTpl',data.result);
 				$('#basicInfo').html(html);
 			}
+
+			CKEDITOR.replace('edi',{
+				toolbarGroups:[
+					{ name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+					{ name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+					{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+					{ name: 'others', groups: [ 'others' ] }
+				]
+			});
+
 
 			// 处理二级分类下的下拉联动
 			$('#firstType').change(function(){

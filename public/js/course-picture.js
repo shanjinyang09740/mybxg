@@ -15,16 +15,19 @@ define(['jquery','template','util','uploadify'],function($,template,util){
 			$('#pictureInfo').html(html);	
 
 			//处理课程封面的上传
+
 			$('#upfile').uploadify({
-				width:'80',
-				height:'30',
-		        buttonText : '选择图片',
+				width: 80,
+				height:'auto',
+		        buttonText : '串串图片',
 		        itemTemplate : '<span></span>',
-		        buttonClass: 'btn btn-success btn-sm',
+		        buttonClass: 'btn btn-success btn-sm upfilebtn',
 		        fileObjName : 'cs_cover_original',
+		        formData: {cs_id: csId},
 		        swf : '/public/assets/uploadify/uploadify.swf',
 		        uploader : '/api/uploader/cover',
 		        onUploadSuccess : function(f,data){
+		        	console.log(data);
 		          var data = JSON.parse(data);
 		          console.log(data);
 		          // 修改图片的URL地址
