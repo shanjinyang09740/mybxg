@@ -24,7 +24,9 @@ require.config({
 		courseList:'../js/course-list',
 		courseAdd:'../js/course-add',
 		courseBasic:'../js/course-basic',
-		coursePicture:'../js/course-picture'
+		coursePicture:'../js/course-picture',
+		jcrop:'jcrop/js/Jcrop',
+		courseLesson:'../js/course-lesson'
 	},
 	shim:{
 		bootstrap : {
@@ -42,8 +44,11 @@ require.config({
 		uploadify:{
 			deps:['jquery']
 		},
-		ckeditor:{
+		ckeditor: {
 			exports:'CKEDITOR'
+		},
+		jcrop: {
+			deps:['jquery']
 		}
 	}
 

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
+    <link rel="stylesheet" href="/public/assets/jcrop/css/Jcrop.css">
     <?php
         include('./views/common/style.html');
     ?>
@@ -68,6 +69,13 @@
                     </a>
                 </li>
             </ul>
+            <!-- 创建表单隐藏域 -->
+            <form id="cropForm" style="display: none;">
+                <input type="text" name="x">
+                <input type="text" name="y">
+                <input type="text" name="w">
+                <input type="text" name="h">
+            </form>
             <!-- 课程图片 -->
             <div class="content">
                 <!-- 标题 -->
@@ -80,7 +88,7 @@
                         {{if cs_cover}}
                             <img src="{{cs_cover_original}}" alt="">
                         {{else}}
-                            <img src="./uploads/course.png" alt="">
+                            <img src="/uploads/course.png" alt="">
                         {{/if}} 
                     </div>
                     <p class="tips">
@@ -90,7 +98,7 @@
                         <input type="file" class="btn btn-success btn-sm" id="upfile">
                     </div>
                     <div class="col-xs-2">
-                        <a href="javascript:;" class="btn btn-warning btn-sm" disabled>裁切图片</a>
+                        <a id="cropBtn" href="javascript:;" class="btn btn-warning btn-sm">裁切图片</a>
                     </div>
                 </div>
             </div>

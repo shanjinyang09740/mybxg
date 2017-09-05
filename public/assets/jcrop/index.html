@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="./css/Jcrop.min.css">
+  <style type="text/css">
+  .jcrop-thumb {
+    top: 0px;
+    right: 0px;
+    border: 1px black solid;
+  }
+  </style>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/Jcrop.js"></script>
+</head>
+<body>
+  <div id="pos" style="position: absolute;width: 200px;height: 200px;background-color: pink;bottom: 0;right: 0"></div>
+  <img src="abc.jpg" id="target" />
+  <script type="text/javascript">
+     $('#target').Jcrop({
+       setSelect: [100,100,300,100],
+       aspectRatio : 2,
+       bgColor : 'pink',
+       bgOpacity : 0.2
+     },function(){
+       this.initComponent('Thumbnailer', { 
+        width: 200, 
+        height: 200,
+        mypos : '#pos'
+       });
+     });
+  </script>
+</body>
+</html>
